@@ -21,7 +21,6 @@ namespace prjAdoDnotNetDemo
         SqlCommandBuilder builder = new SqlCommandBuilder();
         SqlDataAdapter adapter;
         int _position = -1;
-        bool isColor = false;
         private void btnSelect_Click(object sender, EventArgs e)
         {
             refresh();
@@ -115,9 +114,15 @@ namespace prjAdoDnotNetDemo
             DataTable table = dataGridView1.DataSource as DataTable;
             if (table.Rows.Count > 0) adapter.Update(table);
         }
-
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            DataTable table = dataGridView1.DataSource as DataTable;
+            if (table.Rows.Count > 0) adapter.Update(table);
+            refresh();
+        }
         private void btnSearchKeyword_Click(object sender, EventArgs e)
         {
+            SetGridStyle();
             FormKeyword formKeyword = new FormKeyword();
             formKeyword.ShowDialog();
             if (formKeyword.isOKButtonClick)
@@ -125,17 +130,50 @@ namespace prjAdoDnotNetDemo
                 string keyword = formKeyword.keyword;
                 DataTable table = dataGridView1.DataSource as DataTable;
                 DataView dv = new DataView(table);
-                string cmd = $"Convert(fId, 'System.String') like '%{keyword}%' ";
-                cmd += $"or fName LIKE '%{keyword}%' ";
-                cmd += $"or Convert(fCost, 'System.String') like '%{keyword}%' ";
-                cmd += $"or Convert(fPrice, 'System.String') like '%{keyword}%' ";
+                string cmd = $"fName like '%{keyword}%' ";
+                if (int.TryParse(keyword, out int result1) || decimal.TryParse(keyword, out decimal result2))
+                {
+                    cmd += $"or fId = {keyword} ";
+                    cmd += $"or fCost = {keyword} ";
+                    cmd += $"or fPrice = {keyword} ";
+                    cmd += $"or fQty = {keyword} ";
+                }
                 dv.RowFilter = cmd;
-                dataGridView2.DataSource = dv; 
-            }
-            
-            
-            
+                dataGridView2.DataSource = dv;
 
+                //List<string> _cmd = new List<string>();
+                //string cmd1 = $"fId = {keyword} ";
+                //cmd1 += $"or fCost = {keyword} ";
+                //cmd1 += $"or fPrice = {keyword} ";
+                //cmd1 += $"or fQty = {keyword} ";
+                //string cmd2 = $"fName like '%{keyword}%' ";
+                //_cmd.Add(cmd2);
+                //_cmd.Add(cmd1);
+                //DataTable table2 = new DataTable();
+                //foreach (string cmd in _cmd)
+                //{
+                //    DataView dv = new DataView(table);
+                //    dv.RowFilter = cmd;
+                //    table2.Merge(dv.ToTable());
+                //}
+                //dataGridView2.DataSource = table2;
+
+                List<object> rowId = new List<object>();
+                foreach (DataRowView row in dv)
+                {
+                    rowId.Add(row["fId"]);
+                }
+                if (rowId.Count == 0)
+                    return;
+                foreach (object id in rowId)
+                {
+                    DataView dv2 = new DataView(table, "", "fId", DataViewRowState.CurrentRows);
+                    int index = dv2.Find(id);
+                    dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Yellow;
+                }
+            }
         }
+
+        
     }
 }

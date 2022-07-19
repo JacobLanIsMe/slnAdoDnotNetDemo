@@ -31,6 +31,8 @@ namespace prjAdoDnotNetDemo
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.btnSearchKeyword = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
@@ -39,6 +41,7 @@ namespace prjAdoDnotNetDemo
             this.btnInsert = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.btnSave = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -46,6 +49,7 @@ namespace prjAdoDnotNetDemo
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.btnSearchKeyword);
             this.panel1.Controls.Add(this.btnSelect);
             this.panel1.Controls.Add(this.btnDelete);
@@ -60,7 +64,7 @@ namespace prjAdoDnotNetDemo
             // btnSearchKeyword
             // 
             this.btnSearchKeyword.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSearchKeyword.Location = new System.Drawing.Point(18, 361);
+            this.btnSearchKeyword.Location = new System.Drawing.Point(29, 300);
             this.btnSearchKeyword.Name = "btnSearchKeyword";
             this.btnSearchKeyword.Size = new System.Drawing.Size(135, 46);
             this.btnSearchKeyword.TabIndex = 4;
@@ -71,7 +75,7 @@ namespace prjAdoDnotNetDemo
             // btnSelect
             // 
             this.btnSelect.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSelect.Location = new System.Drawing.Point(18, 289);
+            this.btnSelect.Location = new System.Drawing.Point(29, 228);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(135, 46);
             this.btnSelect.TabIndex = 3;
@@ -82,7 +86,7 @@ namespace prjAdoDnotNetDemo
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnDelete.Location = new System.Drawing.Point(18, 217);
+            this.btnDelete.Location = new System.Drawing.Point(29, 156);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(135, 46);
             this.btnDelete.TabIndex = 2;
@@ -93,7 +97,7 @@ namespace prjAdoDnotNetDemo
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnUpdate.Location = new System.Drawing.Point(18, 145);
+            this.btnUpdate.Location = new System.Drawing.Point(29, 84);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(135, 46);
             this.btnUpdate.TabIndex = 1;
@@ -104,7 +108,7 @@ namespace prjAdoDnotNetDemo
             // btnInsert
             // 
             this.btnInsert.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnInsert.Location = new System.Drawing.Point(18, 73);
+            this.btnInsert.Location = new System.Drawing.Point(29, 12);
             this.btnInsert.Name = "btnInsert";
             this.btnInsert.Size = new System.Drawing.Size(135, 46);
             this.btnInsert.TabIndex = 0;
@@ -114,7 +118,7 @@ namespace prjAdoDnotNetDemo
             // 
             // dataGridView1
             // 
-            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.DisplayedCells;
+            this.dataGridView1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.White;
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -137,12 +141,35 @@ namespace prjAdoDnotNetDemo
             // 
             // dataGridView2
             // 
+            this.dataGridView2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridView2.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 348);
+            this.dataGridView2.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.dataGridView2.Location = new System.Drawing.Point(0, 324);
             this.dataGridView2.Name = "dataGridView2";
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.dataGridView2.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(600, 90);
+            this.dataGridView2.Size = new System.Drawing.Size(600, 126);
             this.dataGridView2.TabIndex = 14;
+            // 
+            // btnSave
+            // 
+            this.btnSave.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSave.Location = new System.Drawing.Point(29, 365);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(135, 46);
+            this.btnSave.TabIndex = 5;
+            this.btnSave.Text = "存入資料庫";
+            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // FormProductList
             // 
@@ -173,5 +200,6 @@ namespace prjAdoDnotNetDemo
         private System.Windows.Forms.Button btnInsert;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btnSave;
     }
 }
