@@ -130,7 +130,7 @@ namespace prjAdoDnotNetDemo
                 cmd += $"or Convert(fCost, 'System.String') like '%{keyword}%' ";
                 cmd += $"or Convert(fPrice, 'System.String') like '%{keyword}%' ";
                 dv.RowFilter = cmd;
-                dataGridView2.DataSource = dv;
+                dataGridView2.DataSource = dv; 
             }
             
             
