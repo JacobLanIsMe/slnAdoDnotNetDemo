@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "prjAdoDnotNetDemo", "prjAdoDnotNetDemo\prjAdoDnotNetDemo.csproj", "{C3720A2E-ED64-4A0D-B017-AF956BEE0F9F}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3720A2E-ED64-4A0D-B017-AF956BEE0F9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3720A2E-ED64-4A0D-B017-AF956BEE0F9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3720A2E-ED64-4A0D-B017-AF956BEE0F9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3720A2E-ED64-4A0D-B017-AF956BEE0F9F}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {8F3BCD47-81DC-4071-BCC4-8DD8BA0F62DB}
+	EndGlobalSection
+EndGlobal
