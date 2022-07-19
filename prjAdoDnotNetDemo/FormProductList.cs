@@ -130,8 +130,15 @@ namespace prjAdoDnotNetDemo
                 string keyword = formKeyword.keyword;
                 DataTable table = dataGridView1.DataSource as DataTable;
                 DataView dv = new DataView(table);
+
+                //string cmd = $"fName like '%{keyword}%' ";
+                //cmd += $"or Convert(fId, 'System.String') = '{keyword}' ";
+                //cmd += $"or Convert(fCost, 'System.String') = '{keyword}' ";
+                //cmd += $"or Convert(fPrice, 'System.String') = '{keyword}' ";
+                //cmd += $"or Convert(fQty, 'System.String') = '{keyword}' ";
+
                 string cmd = $"fName like '%{keyword}%' ";
-                if (int.TryParse(keyword, out int result1) || decimal.TryParse(keyword, out decimal result2))
+                if (decimal.TryParse(keyword, out decimal result2))
                 {
                     cmd += $"or fId = {keyword} ";
                     cmd += $"or fCost = {keyword} ";
