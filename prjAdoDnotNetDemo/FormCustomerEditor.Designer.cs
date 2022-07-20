@@ -39,6 +39,7 @@ namespace prjAdoDnotNetDemo
             this.textBoxEmail = new System.Windows.Forms.TextBox();
             this.labelEmail = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnSearchKeyword = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
@@ -47,7 +48,6 @@ namespace prjAdoDnotNetDemo
             this.textBoxAddress = new System.Windows.Forms.TextBox();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.labelPassword = new System.Windows.Forms.Label();
-            this.btnSearchKeyword = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -75,7 +75,8 @@ namespace prjAdoDnotNetDemo
             // 
             // textBoxNumber
             // 
-            this.textBoxNumber.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxNumber.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxNumber.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
             this.textBoxNumber.Location = new System.Drawing.Point(438, 44);
             this.textBoxNumber.Name = "textBoxNumber";
@@ -84,9 +85,10 @@ namespace prjAdoDnotNetDemo
             // 
             // textBoxName
             // 
-            this.textBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxName.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxName.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBoxName.Location = new System.Drawing.Point(438, 133);
+            this.textBoxName.Location = new System.Drawing.Point(438, 126);
             this.textBoxName.Name = "textBoxName";
             this.textBoxName.Size = new System.Drawing.Size(346, 33);
             this.textBoxName.TabIndex = 4;
@@ -95,7 +97,7 @@ namespace prjAdoDnotNetDemo
             // 
             this.labelName.AutoSize = true;
             this.labelName.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelName.Location = new System.Drawing.Point(434, 98);
+            this.labelName.Location = new System.Drawing.Point(434, 91);
             this.labelName.Name = "labelName";
             this.labelName.Size = new System.Drawing.Size(54, 21);
             this.labelName.TabIndex = 3;
@@ -103,9 +105,10 @@ namespace prjAdoDnotNetDemo
             // 
             // textBoxPhone
             // 
-            this.textBoxPhone.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPhone.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPhone.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBoxPhone.Location = new System.Drawing.Point(438, 217);
+            this.textBoxPhone.Location = new System.Drawing.Point(438, 208);
             this.textBoxPhone.Name = "textBoxPhone";
             this.textBoxPhone.Size = new System.Drawing.Size(346, 33);
             this.textBoxPhone.TabIndex = 6;
@@ -114,7 +117,7 @@ namespace prjAdoDnotNetDemo
             // 
             this.labelPhone.AutoSize = true;
             this.labelPhone.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelPhone.Location = new System.Drawing.Point(434, 182);
+            this.labelPhone.Location = new System.Drawing.Point(434, 173);
             this.labelPhone.Name = "labelPhone";
             this.labelPhone.Size = new System.Drawing.Size(54, 21);
             this.labelPhone.TabIndex = 5;
@@ -122,9 +125,10 @@ namespace prjAdoDnotNetDemo
             // 
             // textBoxEmail
             // 
-            this.textBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxEmail.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxEmail.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBoxEmail.Location = new System.Drawing.Point(438, 306);
+            this.textBoxEmail.Location = new System.Drawing.Point(438, 290);
             this.textBoxEmail.Name = "textBoxEmail";
             this.textBoxEmail.Size = new System.Drawing.Size(346, 33);
             this.textBoxEmail.TabIndex = 8;
@@ -133,7 +137,7 @@ namespace prjAdoDnotNetDemo
             // 
             this.labelEmail.AutoSize = true;
             this.labelEmail.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelEmail.Location = new System.Drawing.Point(434, 271);
+            this.labelEmail.Location = new System.Drawing.Point(434, 255);
             this.labelEmail.Name = "labelEmail";
             this.labelEmail.Size = new System.Drawing.Size(54, 21);
             this.labelEmail.TabIndex = 7;
@@ -151,6 +155,17 @@ namespace prjAdoDnotNetDemo
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(200, 597);
             this.panel1.TabIndex = 11;
+            // 
+            // btnSearchKeyword
+            // 
+            this.btnSearchKeyword.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnSearchKeyword.Location = new System.Drawing.Point(18, 361);
+            this.btnSearchKeyword.Name = "btnSearchKeyword";
+            this.btnSearchKeyword.Size = new System.Drawing.Size(135, 46);
+            this.btnSearchKeyword.TabIndex = 4;
+            this.btnSearchKeyword.Text = "查詢關鍵字";
+            this.btnSearchKeyword.UseVisualStyleBackColor = true;
+            this.btnSearchKeyword.Click += new System.EventHandler(this.btnSearchKeyword_Click);
             // 
             // btnSelect
             // 
@@ -200,7 +215,7 @@ namespace prjAdoDnotNetDemo
             // 
             this.labelAddress.AutoSize = true;
             this.labelAddress.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelAddress.Location = new System.Drawing.Point(434, 351);
+            this.labelAddress.Location = new System.Drawing.Point(434, 337);
             this.labelAddress.Name = "labelAddress";
             this.labelAddress.Size = new System.Drawing.Size(54, 21);
             this.labelAddress.TabIndex = 9;
@@ -208,18 +223,20 @@ namespace prjAdoDnotNetDemo
             // 
             // textBoxAddress
             // 
-            this.textBoxAddress.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxAddress.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxAddress.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBoxAddress.Location = new System.Drawing.Point(438, 386);
+            this.textBoxAddress.Location = new System.Drawing.Point(438, 372);
             this.textBoxAddress.Name = "textBoxAddress";
             this.textBoxAddress.Size = new System.Drawing.Size(346, 33);
             this.textBoxAddress.TabIndex = 10;
             // 
             // textBoxPassword
             // 
-            this.textBoxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBoxPassword.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxPassword.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.textBoxPassword.Location = new System.Drawing.Point(438, 464);
+            this.textBoxPassword.Location = new System.Drawing.Point(438, 454);
             this.textBoxPassword.Name = "textBoxPassword";
             this.textBoxPassword.Size = new System.Drawing.Size(346, 33);
             this.textBoxPassword.TabIndex = 13;
@@ -228,22 +245,11 @@ namespace prjAdoDnotNetDemo
             // 
             this.labelPassword.AutoSize = true;
             this.labelPassword.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.labelPassword.Location = new System.Drawing.Point(434, 429);
+            this.labelPassword.Location = new System.Drawing.Point(434, 419);
             this.labelPassword.Name = "labelPassword";
             this.labelPassword.Size = new System.Drawing.Size(54, 21);
             this.labelPassword.TabIndex = 12;
             this.labelPassword.Text = "密碼";
-            // 
-            // btnSearchKeyword
-            // 
-            this.btnSearchKeyword.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSearchKeyword.Location = new System.Drawing.Point(18, 361);
-            this.btnSearchKeyword.Name = "btnSearchKeyword";
-            this.btnSearchKeyword.Size = new System.Drawing.Size(135, 46);
-            this.btnSearchKeyword.TabIndex = 4;
-            this.btnSearchKeyword.Text = "查詢關鍵字";
-            this.btnSearchKeyword.UseVisualStyleBackColor = true;
-            this.btnSearchKeyword.Click += new System.EventHandler(this.btnSearchKeyword_Click);
             // 
             // FormCustomerEditor
             // 

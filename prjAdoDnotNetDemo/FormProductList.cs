@@ -17,6 +17,7 @@ namespace prjAdoDnotNetDemo
         public FormProductList()
         {
             InitializeComponent();
+            refresh();
         }
         SqlCommandBuilder builder = new SqlCommandBuilder();
         SqlDataAdapter adapter;
@@ -70,12 +71,6 @@ namespace prjAdoDnotNetDemo
         {
             refresh();
         }
-
-        private void dataGridView1_RowEnter(object sender, DataGridViewCellEventArgs e)
-        {
-            _position = e.RowIndex;
-        }
-
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (_position < 0) return;
@@ -147,7 +142,12 @@ namespace prjAdoDnotNetDemo
                 }
                 dv.RowFilter = cmd;
                 dataGridView2.DataSource = dv;
-
+                DataView dv2 = new DataView(table, "", "fId", DataViewRowState.CurrentRows);
+                foreach (DataRowView drv in dv)
+                {
+                    int index = dv2.Find(drv["fId"]);
+                    dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Yellow;
+                }
                 //List<string> _cmd = new List<string>();
                 //string cmd1 = $"fId = {keyword} ";
                 //cmd1 += $"or fCost = {keyword} ";
@@ -165,22 +165,25 @@ namespace prjAdoDnotNetDemo
                 //}
                 //dataGridView2.DataSource = table2;
 
-                List<object> rowId = new List<object>();
-                foreach (DataRowView row in dv)
-                {
-                    rowId.Add(row["fId"]);
-                }
-                if (rowId.Count == 0)
-                    return;
-                foreach (object id in rowId)
-                {
-                    DataView dv2 = new DataView(table, "", "fId", DataViewRowState.CurrentRows);
-                    int index = dv2.Find(id);
-                    dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Yellow;
-                }
+                //List<object> rowId = new List<object>();
+                //foreach (DataRowView row in dv)
+                //{
+                //    rowId.Add(row["fId"]);
+                //}
+                //if (rowId.Count == 0)
+                //    return;
+                //foreach (object id in rowId)
+                //{
+                //    DataView dv2 = new DataView(table, "", "fId", DataViewRowState.CurrentRows);
+                //    int index = dv2.Find(id);
+                //    dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Yellow;
+                //}
             }
         }
 
-        
+        private void dataGridView1_RowEnter_1(object sender, DataGridViewCellEventArgs e)
+        {
+            _position = e.RowIndex;
+        }
     }
 }
