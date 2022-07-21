@@ -82,7 +82,6 @@ namespace prjAdoDnotNetDemo
             this.btnReverseTable.TabIndex = 6;
             this.btnReverseTable.Text = "反轉資料表";
             this.btnReverseTable.UseVisualStyleBackColor = true;
-            this.btnReverseTable.Click += new System.EventHandler(this.btnReverseTable_Click);
             // 
             // btnSave
             // 
@@ -250,7 +249,6 @@ namespace prjAdoDnotNetDemo
             this.button1.TabIndex = 7;
             this.button1.Text = "反轉資料表";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // FormProductList
             // 
