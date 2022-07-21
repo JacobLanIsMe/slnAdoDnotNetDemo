@@ -71,6 +71,10 @@ namespace prjAdoDnotNetDemo
         {
             refresh();
         }
+        private void dataGridView1_RowEnter_1(object sender, DataGridViewCellEventArgs e)
+        {
+            _position = e.RowIndex;
+        }
         private void btnUpdate_Click(object sender, EventArgs e)
         {
             if (_position < 0) return;
@@ -115,6 +119,35 @@ namespace prjAdoDnotNetDemo
             if (table.Rows.Count > 0) adapter.Update(table);
             refresh();
         }
+
+        //private DataTable ReverseTable(DataTable table)
+        //{
+        //    DataTable reversedTable = new DataTable();
+        //    //DataRow row1 = table.NewRow();
+        //    //for (int i = 0; i < table.Columns.Count; i++)
+        //    //{
+        //    //    string colName1 = table.Columns[i].ColumnName;
+        //    //    row1[colName1] = i;
+        //    //}
+        //    //table.Rows.Add(row1);
+
+        //    for (int i = 0; i < table.Rows.Count; i++)
+        //    {
+        //        reversedTable.Columns.Add(i.ToString());
+        //    }
+        //    foreach(DataColumn col in table.Columns)
+        //    {
+        //        string colName = col.ColumnName;
+        //        DataRow row = reversedTable.NewRow();
+        //        for (int i = 0; i < reversedTable.Columns.Count; i++)
+        //        {
+        //            row[i.ToString()] = table.Rows[i][colName];
+        //        }
+        //        reversedTable.Rows.Add(row);
+        //    }
+        //    return reversedTable;
+        //}
+        
         private void btnSearchKeyword_Click(object sender, EventArgs e)
         {
             SetGridStyle();
@@ -126,12 +159,6 @@ namespace prjAdoDnotNetDemo
                 DataTable table = dataGridView1.DataSource as DataTable;
                 DataView dv = new DataView(table);
 
-                //string cmd = $"fName like '%{keyword}%' ";
-                //cmd += $"or Convert(fId, 'System.String') = '{keyword}' ";
-                //cmd += $"or Convert(fCost, 'System.String') = '{keyword}' ";
-                //cmd += $"or Convert(fPrice, 'System.String') = '{keyword}' ";
-                //cmd += $"or Convert(fQty, 'System.String') = '{keyword}' ";
-
                 string cmd = $"fName like '%{keyword}%' ";
                 if (decimal.TryParse(keyword, out decimal result2))
                 {
@@ -142,12 +169,19 @@ namespace prjAdoDnotNetDemo
                 }
                 dv.RowFilter = cmd;
                 dataGridView2.DataSource = dv;
-                DataView dv2 = new DataView(table, "", "fId", DataViewRowState.CurrentRows);
-                foreach (DataRowView drv in dv)
-                {
-                    int index = dv2.Find(drv["fId"]);
-                    dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Yellow;
-                }
+                //DataView dv2 = new DataView(table, "", "fId", DataViewRowState.CurrentRows);
+                //foreach (DataRowView drv in dv)
+                //{
+                //    int index = dv2.Find(drv["fId"]);
+                //    dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Yellow;
+                //}
+
+                //string cmd = $"fName like '%{keyword}%' ";
+                //cmd += $"or Convert(fId, 'System.String') = '{keyword}' ";
+                //cmd += $"or Convert(fCost, 'System.String') = '{keyword}' ";
+                //cmd += $"or Convert(fPrice, 'System.String') = '{keyword}' ";
+                //cmd += $"or Convert(fQty, 'System.String') = '{keyword}' ";
+
                 //List<string> _cmd = new List<string>();
                 //string cmd1 = $"fId = {keyword} ";
                 //cmd1 += $"or fCost = {keyword} ";
@@ -178,12 +212,79 @@ namespace prjAdoDnotNetDemo
                 //    int index = dv2.Find(id);
                 //    dataGridView1.Rows[index].DefaultCellStyle.BackColor = Color.Yellow;
                 //}
+                for (int i = 0; i < table.Columns.Count; i++)
+                {
+                    DataTable selectedTable = new DataTable();
+                    selectedTable.Columns.Add("number");
+                    selectedTable.Columns.Add(i.ToString());
+                    for (int j = 0; j < table.Rows.Count; j++)
+                    {
+                        DataRow row = selectedTable.NewRow();
+                        row["number"] = table.Rows[j]["fId"];
+                        row[i.ToString()] = table.Rows[j][table.Columns[i]];
+                        selectedTable.Rows.Add(row);
+                    }
+                    DataView newdv = new DataView(selectedTable);
+                    DataView newdv2 = new DataView(selectedTable, "", "number", DataViewRowState.CurrentRows);
+                    
+                    newdv.RowFilter = $"fName like '%{keyword}%' ";
+                    foreach (DataRowView drv in newdv)
+                    {
+                        int rowIndex = newdv2.Find(drv["number"]);
+                        dataGridView1.Rows[rowIndex].Cells[i].Style.BackColor = Color.Yellow;
+
+                    }
+                }
             }
         }
 
-        private void dataGridView1_RowEnter_1(object sender, DataGridViewCellEventArgs e)
+        private void btnReverseTable_Click(object sender, EventArgs e)
         {
-            _position = e.RowIndex;
+            DataTable table = dataGridView1.DataSource as DataTable;
+            
+            //DataTable newTable = table.Clone();
+
+            for (int i = 0; i < table.Columns.Count; i++)
+            {
+                DataTable selectedTable = new DataTable();
+                selectedTable.Columns.Add("number");
+                selectedTable.Columns.Add(i.ToString());
+                for (int j = 0; j < table.Rows.Count; j++)
+                {
+                    DataRow row = selectedTable.NewRow();
+                    row["number"] = table.Rows[j]["fId"];
+                    row[i.ToString()] = table.Rows[j][table.Columns[i]];
+                    selectedTable.Rows.Add(row);
+                }
+                DataView newdv = new DataView(selectedTable);
+                DataView newdv2 = new DataView(selectedTable, "", "number", DataViewRowState.CurrentRows);
+                string cmd = $"'{i.ToString()}' like '%男%' ";
+                newdv.RowFilter = cmd;
+                foreach (DataRowView drv in newdv)
+                {
+                    int rowIndex = newdv2.Find(drv["number"]);
+                    dataGridView1.Rows[rowIndex].Cells[i].Style.BackColor = Color.Yellow;
+                    
+                }
+            }
+
+
+        }
+
+        //private string Repeatedword(string[] array)
+        //{
+        //    for (int i = 0; i < array.Length - 1; i++)
+        //    {
+
+        //        for (int j = 0; j < array[0].Length; j++)
+        //        {
+        //            if ()
+        //        }
+        //    }
+        //}
+        private void button1_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

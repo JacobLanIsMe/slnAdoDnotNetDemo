@@ -37,6 +37,7 @@ namespace prjAdoDnotNetDemo
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnReverseTable = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnSearchKeyword = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
@@ -46,6 +47,7 @@ namespace prjAdoDnotNetDemo
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -57,6 +59,8 @@ namespace prjAdoDnotNetDemo
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button1);
+            this.panel1.Controls.Add(this.btnReverseTable);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.btnSearchKeyword);
             this.panel1.Controls.Add(this.btnSelect);
@@ -69,10 +73,21 @@ namespace prjAdoDnotNetDemo
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 12;
             // 
+            // btnReverseTable
+            // 
+            this.btnReverseTable.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnReverseTable.Location = new System.Drawing.Point(29, 324);
+            this.btnReverseTable.Name = "btnReverseTable";
+            this.btnReverseTable.Size = new System.Drawing.Size(135, 30);
+            this.btnReverseTable.TabIndex = 6;
+            this.btnReverseTable.Text = "反轉資料表";
+            this.btnReverseTable.UseVisualStyleBackColor = true;
+            this.btnReverseTable.Click += new System.EventHandler(this.btnReverseTable_Click);
+            // 
             // btnSave
             // 
             this.btnSave.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSave.Location = new System.Drawing.Point(29, 365);
+            this.btnSave.Location = new System.Drawing.Point(29, 272);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(135, 46);
             this.btnSave.TabIndex = 5;
@@ -83,7 +98,7 @@ namespace prjAdoDnotNetDemo
             // btnSearchKeyword
             // 
             this.btnSearchKeyword.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSearchKeyword.Location = new System.Drawing.Point(29, 300);
+            this.btnSearchKeyword.Location = new System.Drawing.Point(29, 220);
             this.btnSearchKeyword.Name = "btnSearchKeyword";
             this.btnSearchKeyword.Size = new System.Drawing.Size(135, 46);
             this.btnSearchKeyword.TabIndex = 4;
@@ -94,7 +109,7 @@ namespace prjAdoDnotNetDemo
             // btnSelect
             // 
             this.btnSelect.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnSelect.Location = new System.Drawing.Point(29, 228);
+            this.btnSelect.Location = new System.Drawing.Point(29, 168);
             this.btnSelect.Name = "btnSelect";
             this.btnSelect.Size = new System.Drawing.Size(135, 46);
             this.btnSelect.TabIndex = 3;
@@ -105,7 +120,7 @@ namespace prjAdoDnotNetDemo
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnDelete.Location = new System.Drawing.Point(29, 156);
+            this.btnDelete.Location = new System.Drawing.Point(29, 116);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(135, 46);
             this.btnDelete.TabIndex = 2;
@@ -116,7 +131,7 @@ namespace prjAdoDnotNetDemo
             // btnUpdate
             // 
             this.btnUpdate.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnUpdate.Location = new System.Drawing.Point(29, 84);
+            this.btnUpdate.Location = new System.Drawing.Point(29, 64);
             this.btnUpdate.Name = "btnUpdate";
             this.btnUpdate.Size = new System.Drawing.Size(135, 46);
             this.btnUpdate.TabIndex = 1;
@@ -226,6 +241,17 @@ namespace prjAdoDnotNetDemo
             this.dataGridView2.Size = new System.Drawing.Size(600, 156);
             this.dataGridView2.TabIndex = 0;
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.button1.Location = new System.Drawing.Point(29, 371);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(135, 30);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "反轉資料表";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormProductList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
@@ -251,14 +277,16 @@ namespace prjAdoDnotNetDemo
         #endregion
 
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Button btnInsert;
+        private System.Windows.Forms.SplitContainer splitContainer1;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button btnReverseTable;
+        private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnSearchKeyword;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button btnInsert;
-        private System.Windows.Forms.Button btnSave;
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridView dataGridView2;
+        private System.Windows.Forms.Button button1;
     }
 }
