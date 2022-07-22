@@ -37,7 +37,8 @@ namespace prjAdoDnotNetDemo
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnReverseTable = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
+            this.comboBoxSort = new System.Windows.Forms.ComboBox();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnSearchKeyword = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
@@ -47,7 +48,7 @@ namespace prjAdoDnotNetDemo
             this.splitContainer1 = new System.Windows.Forms.SplitContainer();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnExtract = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel1.SuspendLayout();
@@ -59,8 +60,9 @@ namespace prjAdoDnotNetDemo
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.button1);
-            this.panel1.Controls.Add(this.btnReverseTable);
+            this.panel1.Controls.Add(this.btnExtract);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Controls.Add(this.comboBoxSort);
             this.panel1.Controls.Add(this.btnSave);
             this.panel1.Controls.Add(this.btnSearchKeyword);
             this.panel1.Controls.Add(this.btnSelect);
@@ -73,15 +75,25 @@ namespace prjAdoDnotNetDemo
             this.panel1.Size = new System.Drawing.Size(200, 450);
             this.panel1.TabIndex = 12;
             // 
-            // btnReverseTable
+            // label1
             // 
-            this.btnReverseTable.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.btnReverseTable.Location = new System.Drawing.Point(29, 324);
-            this.btnReverseTable.Name = "btnReverseTable";
-            this.btnReverseTable.Size = new System.Drawing.Size(135, 30);
-            this.btnReverseTable.TabIndex = 6;
-            this.btnReverseTable.Text = "反轉資料表";
-            this.btnReverseTable.UseVisualStyleBackColor = true;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.label1.Location = new System.Drawing.Point(29, 325);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(54, 21);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "排序";
+            // 
+            // comboBoxSort
+            // 
+            this.comboBoxSort.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.comboBoxSort.FormattingEnabled = true;
+            this.comboBoxSort.Location = new System.Drawing.Point(29, 349);
+            this.comboBoxSort.Name = "comboBoxSort";
+            this.comboBoxSort.Size = new System.Drawing.Size(135, 29);
+            this.comboBoxSort.TabIndex = 6;
+            this.comboBoxSort.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnSave
             // 
@@ -240,15 +252,16 @@ namespace prjAdoDnotNetDemo
             this.dataGridView2.Size = new System.Drawing.Size(600, 156);
             this.dataGridView2.TabIndex = 0;
             // 
-            // button1
+            // btnExtract
             // 
-            this.button1.Font = new System.Drawing.Font("標楷體", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
-            this.button1.Location = new System.Drawing.Point(29, 371);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(135, 30);
-            this.button1.TabIndex = 7;
-            this.button1.Text = "反轉資料表";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnExtract.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnExtract.Location = new System.Drawing.Point(29, 392);
+            this.btnExtract.Name = "btnExtract";
+            this.btnExtract.Size = new System.Drawing.Size(135, 46);
+            this.btnExtract.TabIndex = 8;
+            this.btnExtract.Text = "匯出";
+            this.btnExtract.UseVisualStyleBackColor = true;
+            this.btnExtract.Click += new System.EventHandler(this.btnExtract_Click);
             // 
             // FormProductList
             // 
@@ -262,6 +275,7 @@ namespace prjAdoDnotNetDemo
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.FormProductList_FormClosed);
             this.Load += new System.EventHandler(this.FormProductList_Load);
             this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
@@ -279,12 +293,13 @@ namespace prjAdoDnotNetDemo
         private System.Windows.Forms.SplitContainer splitContainer1;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button btnReverseTable;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnSearchKeyword;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox comboBoxSort;
+        private System.Windows.Forms.Button btnExtract;
     }
 }

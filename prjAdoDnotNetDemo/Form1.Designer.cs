@@ -36,6 +36,7 @@ namespace prjAdoDnotNetDemo
             this.button4 = new System.Windows.Forms.Button();
             this.btnCustomerEditor = new System.Windows.Forms.Button();
             this.btnProduct = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -113,11 +114,23 @@ namespace prjAdoDnotNetDemo
             this.btnProduct.UseVisualStyleBackColor = true;
             this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
+            // button5
+            // 
+            this.button5.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(317, 218);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(127, 49);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Transaction";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.button5);
             this.Controls.Add(this.btnProduct);
             this.Controls.Add(this.btnCustomerEditor);
             this.Controls.Add(this.button4);
@@ -141,6 +154,7 @@ namespace prjAdoDnotNetDemo
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button btnCustomerEditor;
         private System.Windows.Forms.Button btnProduct;
+        private System.Windows.Forms.Button button5;
     }
 }
 

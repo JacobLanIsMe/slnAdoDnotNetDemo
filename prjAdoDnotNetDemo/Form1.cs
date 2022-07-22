@@ -90,5 +90,33 @@ namespace prjAdoDnotNetDemo
             FormProductList formProductList = new FormProductList();
             formProductList.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SqlConnection con = new SqlConnection();
+            con.ConnectionString = @"Data Source=.;Initial Catalog=dbDemo;Integrated Security=True";
+            con.Open();
+            SqlCommand cmd = new SqlCommand();
+            SqlTransaction sqlTransaction = con.BeginTransaction(); ;
+            cmd.Connection = con;
+            cmd.Transaction = sqlTransaction;
+            try
+            {
+                cmd.CommandText = "Insert into tCustomer (fName, fPhone, fEmail, fAddress, fPassword) values ('Hello', '01', 'Hello@gmail.com', '台北市', '1234')";
+                cmd.ExecuteNonQuery();
+                cmd.CommandText = "Insert into tCustomer (fName, fPhone, fEmail, fAddress, fPassword) values ('Hi', '01', 'Hi@gmail.com', '台南市')";
+                cmd.ExecuteNonQuery();
+                sqlTransaction.Commit();
+                MessageBox.Show("交易成功");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("交易失敗");
+            }
+            finally
+            {
+                MessageBox.Show("結束");
+            }
+        }
     }
 }
