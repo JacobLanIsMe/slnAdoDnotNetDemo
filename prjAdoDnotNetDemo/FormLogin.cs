@@ -20,16 +20,14 @@ namespace prjAdoDnotNetDemo
 
         private void btnCancel_Click(object sender, EventArgs e)
         {
+            isClosed = false;
             Application.Exit();
         }
         bool isClosed = true;
 
         private void FormLogin_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (isClosed)
-            {
-                e.Cancel = true;
-            } 
+            if (isClosed) e.Cancel = true;
         }
 
         private void btnLogin_Click(object sender, EventArgs e)
@@ -39,19 +37,17 @@ namespace prjAdoDnotNetDemo
             con.Open();
             string account = txtAccount.Text;
             string password = txtPassword.Text;
-
-            string sql = "select * from tCustomer where fName = @K_Account and fPassword = @K_Password";
+            string sql = "select * from tCustomer where fEmail = @K_Email and fPassword = @K_Password";
             SqlCommand cmd = new SqlCommand();
             cmd.Connection = con;
             cmd.CommandText = sql;
-            cmd.Parameters.Add(new SqlParameter("K_Account", account));
+            cmd.Parameters.Add(new SqlParameter("K_Email", account));
             cmd.Parameters.Add(new SqlParameter("K_Password", password));
             cmd.CommandText = sql;
-            
-
             SqlDataReader reader = cmd.ExecuteReader();
             if (reader.Read())
             {
+                helloString = reader["fName"].ToString();
                 con.Close();
                 isClosed = false;
                 Close();
@@ -62,5 +58,6 @@ namespace prjAdoDnotNetDemo
                 MessageBox.Show("帳號與密碼錯誤");
             }
         }
+        public string helloString { get; set; }
     }
 }

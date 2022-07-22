@@ -70,8 +70,18 @@ namespace prjAdoDnotNetDemo
 
         private void MainForm_Load(object sender, EventArgs e)
         {
-            FormLogin formLogin = new FormLogin();
-            formLogin.ShowDialog();
+            //FormLogin formLogin = new FormLogin();
+            //formLogin.ShowDialog();
+            //labelHelloString.Text = "歡迎 "+ formLogin.helloString + "回來";
+        }
+
+        private void btnOrder_Click(object sender, EventArgs e)
+        {
+            FormOrder formOrder = new FormOrder();
+            formOrder.MdiParent = this;
+            formOrder.WindowState = FormWindowState.Maximized;
+            formOrder.Show();
+
         }
     }
 }

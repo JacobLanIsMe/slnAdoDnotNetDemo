@@ -44,6 +44,8 @@ namespace prjAdoDnotNetDemo
             this.階層排列ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.關閉目前視窗ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.關閉所有視窗ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.labelHelloString = new System.Windows.Forms.Label();
+            this.btnOrder = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.toolStrip1.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -51,6 +53,8 @@ namespace prjAdoDnotNetDemo
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.btnOrder);
+            this.panel1.Controls.Add(this.labelHelloString);
             this.panel1.Controls.Add(this.toolStrip1);
             this.panel1.Controls.Add(this.btnProduct);
             this.panel1.Controls.Add(this.btnCustomer);
@@ -58,7 +62,7 @@ namespace prjAdoDnotNetDemo
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(800, 145);
+            this.panel1.Size = new System.Drawing.Size(852, 145);
             this.panel1.TabIndex = 0;
             // 
             // toolStrip1
@@ -68,7 +72,7 @@ namespace prjAdoDnotNetDemo
             this.toolStripButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 24);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 25);
+            this.toolStrip1.Size = new System.Drawing.Size(852, 57);
             this.toolStrip1.TabIndex = 3;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -77,7 +81,7 @@ namespace prjAdoDnotNetDemo
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(51, 22);
+            this.toolStripButton1.Size = new System.Drawing.Size(85, 54);
             this.toolStripButton1.Text = "關閉";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
@@ -112,7 +116,7 @@ namespace prjAdoDnotNetDemo
             this.室窗ToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(800, 24);
+            this.menuStrip1.Size = new System.Drawing.Size(852, 24);
             this.menuStrip1.TabIndex = 2;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -178,11 +182,32 @@ namespace prjAdoDnotNetDemo
             this.關閉所有視窗ToolStripMenuItem.Text = "關閉所有視窗";
             this.關閉所有視窗ToolStripMenuItem.Click += new System.EventHandler(this.關閉所有視窗ToolStripMenuItem_Click);
             // 
+            // labelHelloString
+            // 
+            this.labelHelloString.AutoSize = true;
+            this.labelHelloString.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.labelHelloString.Location = new System.Drawing.Point(699, 83);
+            this.labelHelloString.Name = "labelHelloString";
+            this.labelHelloString.Size = new System.Drawing.Size(98, 21);
+            this.labelHelloString.TabIndex = 4;
+            this.labelHelloString.Text = "歡迎回來";
+            // 
+            // btnOrder
+            // 
+            this.btnOrder.Font = new System.Drawing.Font("標楷體", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(136)));
+            this.btnOrder.Location = new System.Drawing.Point(304, 83);
+            this.btnOrder.Name = "btnOrder";
+            this.btnOrder.Size = new System.Drawing.Size(137, 59);
+            this.btnOrder.TabIndex = 5;
+            this.btnOrder.Text = "線上訂購";
+            this.btnOrder.UseVisualStyleBackColor = true;
+            this.btnOrder.Click += new System.EventHandler(this.btnOrder_Click);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(852, 450);
             this.Controls.Add(this.panel1);
             this.IsMdiContainer = true;
             this.MainMenuStrip = this.menuStrip1;
@@ -216,5 +241,7 @@ namespace prjAdoDnotNetDemo
         private System.Windows.Forms.ToolStripMenuItem 關閉所有視窗ToolStripMenuItem;
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.Label labelHelloString;
+        private System.Windows.Forms.Button btnOrder;
     }
 }

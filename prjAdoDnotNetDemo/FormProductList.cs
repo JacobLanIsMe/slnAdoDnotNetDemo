@@ -249,11 +249,6 @@ namespace prjAdoDnotNetDemo
             DataView dv = dataGridView1.DataSource as DataView;
             dv.Sort = comboBoxSort.Text;
             dataGridView1.DataSource = dv;
-
-
-
-
-
             SetGridStyle();
         }
 
